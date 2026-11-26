@@ -70,8 +70,10 @@ it, the label of the rule that gives it, and the reference or key it
 concerns; it is new when the compilation without the edit has no violation
 with the same three. Message text is not part of the identity. An *add* of
 the edge from parent `p` to child `c` creates a cycle exactly when `p` is
-reachable from `c` in the graph of the compilation without the edit; a
-*remove* never creates one. A reference outside the scope is new when the
+reachable from `c` in the graph of the compilation with the edit, with that
+one edge left out. That compilation is used, not the one without the edit,
+because the edit can bring into the closure issues that a rooted run did not
+reach before. A *remove* never creates one. A reference outside the scope is new when the
 compilation without the edit does not name it from the same document, and
 so is an unknown prerequisite (X3), which makes a run invalid without
 being a violation.

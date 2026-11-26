@@ -49,3 +49,7 @@ A change to the version table, a format or a profile is a pull request to
 this repository, reviewed by its maintainers ([versions.md](versions.md),
 rule P5). Every rule a conformance case tests has a normative statement here
 (rule A9); a case never defines a rule on its own.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE). Contributing: [CONTRIBUTING.md](CONTRIBUTING.md). Security: [SECURITY.md](SECURITY.md).

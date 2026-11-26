@@ -75,7 +75,7 @@ in this order:
 1. *rejected*: a run parameter is invalid (I2);
 2. *incomplete*: a required observation is unavailable;
 3. *invalid*: the observations are complete and some document, cross-document
-   rule or graph rule fails;
+   rule, discovery rule (D3 to D5) or graph rule fails;
 4. *planned*: none of the above.
 
 **F2. No partial plan.** An incomplete run MUST NOT produce a graph, a ready
@@ -249,7 +249,8 @@ ends at `u`. Wave `k` holds the nodes of level `k`, each wave in rank order.
 Wave 0 is the ready set.
 
 **K8. Critical path.** A critical path exists only when the edges have no cycle
-(G4), as in every planned run; a run whose edges form a cycle reports none.
+(G4), as in every planned run, and some node is open; a run whose edges form a
+cycle, or that has no open node, reports none.
 The critical path starts at the open node with the greatest pair (level,
 identifier) and steps, while the current node has a predecessor in the
 reduced graph, to the predecessor with the greatest pair (level, identifier).

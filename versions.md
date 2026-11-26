@@ -172,23 +172,28 @@ A typepack with no predecessor has no comparison. That is recorded as
 2. *Laws*: each event of the law diff is classified through a table that this
    repository owns. An event the table does not classify is *unknown*.
 3. *Behaviour*: a copy of every document-level conformance case of version
-   `n` (a case that judges one body: its acceptance and its decoded record),
-   with its declaration relabelled to `n+1`, gives its expected result,
-   compared as A3 says, when the new reader dispatches it as `n+1` (P1).
-   Cases that judge a plan are compared under the planning profiles a claim
-   names (A2), not here. The unchanged cases
-   of version `n` are run separately, as the check that the new reader still
+   `n` (a case that judges one body: its acceptance and its decoded record)
+   whose body is valid under `n`, with its declaration relabelled to `n+1`,
+   is accepted and decodes, compared as A3 says, to the record the case
+   expects, when the new reader dispatches it as `n+1` (P1). A case whose
+   body is invalid under `n` is not relabelled: an additive version may
+   accept it, which A3 allows. Cases that judge a plan are compared under the
+   planning profiles a claim names (A2), not here. The unchanged cases of
+   version `n` are run separately, as the check that the new reader still
    reads `n`; that check is not evidence for additivity.
-4. *Carrier and binding*: the carrier grammar and the key binding of `n+1`
-   are each unchanged from `n`, or a comparison of the two shows that every
-   body accepted under `n` is accepted under `n+1` with the same keys and
-   values.
+4. *Carrier, binding and value rules*: the carrier grammar, the key binding
+   and the value rules of `n+1` (how each value is decoded, the decoded value
+   of an absent key, and the constraints on each scalar, such as integer
+   bounds and the form of a reference) are each unchanged from `n`, or a
+   comparison of the two shows that every body accepted under `n` is accepted
+   under `n+1` and decodes to the same record, compared as A3 says. A finite
+   corpus cannot show this; the comparison is of the rules themselves.
 
 The verdict is *incompatible* when any check produces a witness. It is
 *compatible* only when the shape is non-breaking within the dialect, every
 law event is classified as non-restricting, every relabelled case passes,
-and the carrier and the binding are unchanged or shown to accept as before.
-Otherwise it is *unknown*.
+and the carrier, the binding and the value rules are unchanged or shown to
+accept and decode as before. Otherwise it is *unknown*.
 
 **A6. Shape dialect.** A typepack shape uses only GraphQL `input` types,
 custom scalars, enums, lists and nullability. It uses no default values and

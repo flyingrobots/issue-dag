@@ -39,11 +39,15 @@ written from this specification's text alone. The two verdicts agreed on all
 The measurement of 2026-11-10 kept a count, 237, and not a list, so its
 documents cannot be identified one by one. This census lists the same five
 repositories with the same limit two days later. A document counted then that
-still carried frontmatter on 2026-11-12 is among these 282, possibly edited
-since; one deleted or stripped of its block in between is not. This census is
-therefore the measured set against which the specification is checked: every
-shape below has a verdict, and a reviewer decides from the text of the format
-alone whether each is accepted.
+still carried frontmatter on 2026-11-12, and fell inside that day's listing,
+is among these 282, possibly edited since. One deleted or stripped of its
+block in between is not, and neither is an older `git-stunts/git-warp` issue
+that issues opened since pushed past the 600-issue limit: `gh issue list`
+returns the newest first, so the limit drops the oldest. The other four
+repositories were listed in full. This census is therefore the measured set
+against which the specification is checked: every shape below has a verdict,
+and a reviewer decides from the text of the format alone whether each is
+accepted.
 
 ## Features common to every block
 

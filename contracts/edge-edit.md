@@ -71,7 +71,9 @@ with the same three. Message text is not part of the identity. An *add* of
 the edge from parent `p` to child `c` creates a cycle exactly when `p` is
 reachable from `c` in the graph of the compilation without the edit; a
 *remove* never creates one. A reference outside the scope is new when the
-compilation without the edit does not name it from the same document.
+compilation without the edit does not name it from the same document, and
+so is an unknown prerequisite (X3), which makes a run invalid without
+being a violation.
 
 **E7. Writer and final reread.** Before the write, the program MUST check
 that the identity it writes as is admitted under the same trust policy, and

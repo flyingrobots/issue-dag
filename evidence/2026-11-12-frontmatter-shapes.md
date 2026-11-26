@@ -34,6 +34,17 @@ validator at `flyingrobots/taskalisk@8e4cb73`, and by a separate reading
 written from this specification's text alone. The two verdicts agreed on all
 282 documents.
 
+## Relation to the 237 documents of 2026-11-10
+
+The measurement of 2026-11-10 kept a count, 237, and not a list, so its
+documents cannot be identified one by one. This census lists the same five
+repositories with the same limit two days later. A document counted then that
+still carried frontmatter on 2026-11-12 is among these 282, possibly edited
+since; one deleted or stripped of its block in between is not. This census is
+therefore the measured set against which the specification is checked: every
+shape below has a verdict, and a reviewer decides from the text of the format
+alone whether each is accepted.
+
 ## Features common to every block
 
 - The body begins with the opening fence, with nothing before it.

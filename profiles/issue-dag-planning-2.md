@@ -112,7 +112,9 @@ node.
 violation and is not a node.
 
 **D5. Transferred.** A reference whose issue now has a different address
-gives a violation to each document that names it. It is not a node.
+gives a violation to each document that names it. When it is a root
+reference that no document read in the run names, the violation is the
+reference's own. It is not a node.
 
 **D6. Not admitted.** An issue whose admission decision is `not admitted` is
 an *opaque node* and its body is not read as a document. It is marked
@@ -245,10 +247,12 @@ sequence of Unicode code points, ascending.
 ends at `u`. Wave `k` holds the nodes of level `k`, each wave in rank order.
 Wave 0 is the ready set.
 
-**K8. Critical path.** The critical path starts at the open node with the
-greatest pair (level, identifier) and steps, while the current node has a
-predecessor in the reduced graph, to the predecessor with the greatest pair
-(level, identifier). The path is reported from its first node to its last.
+**K8. Critical path.** A critical path exists only when the edges have no cycle
+(G4), as in every planned run; a run whose edges form a cycle reports none.
+The critical path starts at the open node with the greatest pair (level,
+identifier) and steps, while the current node has a predecessor in the
+reduced graph, to the predecessor with the greatest pair (level, identifier).
+The path is reported from its first node to its last.
 
 > *Commentary.* K6 compares identifiers as text, so `o/r#10` ranks before
 > `o/r#9` when their scores are equal. K7 and K8 are reported but are not part
@@ -299,8 +303,8 @@ never dispatchable.
 
 ## 11. Reported lists
 
-A plan reports, besides the outcome, the graph, the ready set, the ranking
-and the batch, at least:
+**W1.** A plan MUST report, besides the outcome, the graph, the ready set, the
+ranking and the batch, at least:
 
 - the containers, with their children;
 - the unmodeled issues (D7) and the opaque nodes;

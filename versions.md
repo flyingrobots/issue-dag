@@ -148,10 +148,12 @@ formats it compares. A claim about O4 to O6 also names the two planning
 profiles it compares.
 
 **A3. Additive.** Version `n+1` is *additive* over `n` when, for every
-document valid under `n`, relabelling it to `n+1` preserves O1 and O2. O3
-then follows, because structure is part of the record. The claim is made in
-one direction only: a reader of `n` rejects a document of `n+1` by its
-version.
+document valid under `n`, relabelling it to `n+1` preserves O1 and O2. For
+this comparison O2 compares the two decoded records with their `version`
+fields removed: relabelling changes that field by definition, and every other
+field must be equal. O3 then follows, because structure is part of the
+record. The claim is made in one direction only: a reader of `n` rejects a
+document of `n+1` by its version.
 
 **A4. Verdicts.** A comparison yields one of three verdicts for a stated
 claim:
@@ -163,19 +165,27 @@ claim:
 A typepack with no predecessor has no comparison. That is recorded as
 *first*, which is not a verdict.
 
-**A5. Checks for additivity.** Three checks contribute:
+**A5. Checks for additivity.** Four checks contribute:
 
 1. *Shape*: the schema delta between the two shapes, within the shape dialect
    (A6). Outside the dialect the shape check is *unknown*.
 2. *Laws*: each event of the law diff is classified through a table that this
    repository owns. An event the table does not classify is *unknown*.
-3. *Behaviour*: every conformance case of version `n` gives its expected
-   result under the new reader.
+3. *Behaviour*: a copy of every conformance case of version `n`, with its
+   declaration relabelled to `n+1`, gives its expected result, compared as A3
+   says, when the new reader dispatches it as `n+1` (P1). The unchanged cases
+   of version `n` are run separately, as the check that the new reader still
+   reads `n`; that check is not evidence for additivity.
+4. *Carrier and binding*: the carrier grammar and the key binding of `n+1`
+   are each unchanged from `n`, or a comparison of the two shows that every
+   body accepted under `n` is accepted under `n+1` with the same keys and
+   values.
 
 The verdict is *incompatible* when any check produces a witness. It is
 *compatible* only when the shape is non-breaking within the dialect, every
-law event is classified as non-restricting, and every case passes. Otherwise
-it is *unknown*.
+law event is classified as non-restricting, every relabelled case passes,
+and the carrier and the binding are unchanged or shown to accept as before.
+Otherwise it is *unknown*.
 
 **A6. Shape dialect.** A typepack shape uses only GraphQL `input` types,
 custom scalars, enums, lists and nullability. It uses no default values and

@@ -132,7 +132,7 @@ class CheckTypepackTest(unittest.TestCase):
                          record["schema_hash"])
 
     def test_no_document_calls_the_typepack_unvalidated(self):
-        stale = re.compile(r"(?i)unvalidated|not been run through Wesley|not computed")
+        stale = re.compile(r"(?i)unvalidated|not\s+been\s+run\s+through\s+Wesley|not\s+computed")  # a phrase may wrap
         for path in sorted(ROOT.rglob("*")):
             if path.is_file() and path.suffix in (".md", ".graphql", ".yaml", ".json") and ".git" not in path.parts:
                 with self.subTest(str(path.relative_to(ROOT))):

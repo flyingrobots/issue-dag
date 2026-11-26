@@ -1,0 +1,12 @@
+{
+  "tool": "wesley",
+  "repository": "https://github.com/flyingrobots/wesley",
+  "version": "0.3.0-alpha.1",
+  "tag": "v0.3.0-alpha.1",
+  "commit": "280d3d7b1abbaf40dbf5663ab3c5c1d6e58abbed",
+  "checked_by": "scripts/check_typepack.py (wesley law validate binds the laws to the shape)",
+  "schema_hash": "sha256:c790407a445c00f60026e3e0e30a7ba30f48eb2f69d95ebc9466d5d5cb952388",
+  "law_hash": "sha256:bb7a592d62a78981c04986b7206274bd0d8e0399949e369fb13fec62e607c497",
+  "dialect": "versions.md A6: input types, custom scalars and enums; no default value; no directive",
+  "bound_laws": 2
+}

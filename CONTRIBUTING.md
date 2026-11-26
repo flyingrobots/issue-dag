@@ -9,8 +9,9 @@ implementations must agree on, so they follow a few rules.
 - Open a pull request. Nothing is pushed to `main`.
 - A normative statement carries a label (such as `C3` or `G4`); everything else is informative.
   Keep that separation: never put a requirement in commentary.
-- A new or changed rule needs a conformance case that cites it (`versions.md` A9). A case is
-  evidence for a rule, never its only definition.
+- A conformance case tests only rules that have a normative statement here (`versions.md` A9):
+  a case is evidence for a rule, never its definition. When you add or change a rule the corpus
+  can test, adding a case for it is welcome.
 - A change that alters how an existing document is read is a new version, judged under
   [Versions and compatibility](versions.md), not an edit in place.
 - If the reference implementation behaves differently, record the difference in

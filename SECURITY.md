@@ -11,8 +11,7 @@ Report it privately through GitHub's **Report a vulnerability** form on this rep
 tab. Do not open a public issue for it. Say which rule (by its label, such as `C2` or `E6a`) and give
 a document or observation bundle that shows the problem.
 
-You can expect an answer within a week. A fix lands as a change to the rule, with a conformance case
-that holds it, and the version table says whether documents are affected.
+A fix lands as a change to the rule, and the version table says whether documents are affected.
 
 ## Scope
 

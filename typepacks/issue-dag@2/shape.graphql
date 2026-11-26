@@ -1,0 +1,31 @@
+# Shape of the typepack issue-dag@2.
+#
+# UNVALIDATED SKETCH. This file has not been run through Wesley. It is not
+# normative: formats/issue-dag-2.md governs where they differ.
+#
+# Dialect (versions.md, rule A6): input types, custom scalars, enums, lists
+# and nullability only; no default values; no directives on fields.
+# The key binding maps the carrier key ".<field>" to the field <field>.
+# The order of types and fields is part of the identity; do not reorder.
+
+scalar IssueRef     # owner/repo#N (format rule L1)
+scalar ResourceKey  # non-empty string (format rule L2)
+scalar MeterClaim   # name or name*N (format rule L3)
+scalar PositiveInt  # 1 to 2147483647 (format rule L4)
+
+enum Kind { task container }
+enum TaskType { feature bug decision research investigation spike task }
+enum Status { active parked blocked }
+
+input Frontmatter {
+  dag: String!
+  id: IssueRef!
+  kind: Kind!
+  type: TaskType
+  blocked_by: [IssueRef!]
+  children: [IssueRef!]
+  size_hours: PositiveInt
+  holds: [ResourceKey!]
+  meters: [MeterClaim!]
+  status: Status
+}

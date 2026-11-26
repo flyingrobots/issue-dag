@@ -1,0 +1,32 @@
+# Laws of the typepack issue-dag@2.
+#
+# UNVALIDATED SKETCH. This file has not been run through Wesley, and the
+# schema hash is not computed. It is not normative: formats/issue-dag-2.md
+# governs where they differ.
+#
+# Rules of the format that these laws do not express:
+#   - .dag is exactly "issue-dag/2" (format rule V1);
+#   - no item of .blocked_by or .children equals .id (V7);
+#   - the forms of IssueRef, ResourceKey and MeterClaim (L1 to L3).
+# A law for V7 would be an invariant with an external verifier, which must be
+# pinned (versions.md, rule A7) before a verdict can depend on it.
+apiVersion: weslaw/v1
+schema: { family: issue-dag, hash: "sha256:not-computed", source: shape.graphql }
+laws:
+  - id: issue-dag.frontmatter.kind
+    status: active
+    kind: variantLaw
+    subject: input:Frontmatter
+    discriminator: { field: kind, enum: Kind }
+    cases:
+      - value: task
+        requires: [type, blocked_by]
+        forbids: [children]
+      - value: container
+        requires: [children]
+        forbids: [blocked_by]
+  - id: issue-dag.scalar.positive-int
+    status: active
+    kind: scalarSemantics
+    subject: scalar:PositiveInt
+    semantics: { representation: integer, minInclusive: 1, maxInclusive: 2147483647 }

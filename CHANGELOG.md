@@ -22,9 +22,11 @@ flyingrobots/taskalisk#110 are not recorded here; see the history of this reposi
   - Cases `graph/ob16-missing-over-unavailable`, `graph/ob16-least-of-two-missing`,
     `graph/ob16-missing-codeowners-before-missing-issue`, `graph/ob16-least-of-two-unavailable`,
     `graph/ob16-least-draft-flag-on-the-last-node`, `graph/ob16-least-draft-flag-on-the-first-node`,
-    `graph/ob16-unavailable-issue-before-draft-flag`, `graph/ob16-missing-issue-before-a-later-body`
-    and `graph/ob16-least-of-two-permissions`, each also with `-roots-reversed`. The Python differs
-    on fourteen (differences 25 and 26, compatibility exceptions): it stops at the first lookup it
+    `graph/ob16-unavailable-issue-before-draft-flag`, `graph/ob16-missing-issue-before-a-later-body`,
+    `graph/ob16-missing-pull-requests-before-missing-issue`,
+    `graph/ob16-missing-codeowners-before-missing-pull-requests` and
+    `graph/ob16-least-of-two-permissions`, each also with `-roots-reversed`. The Python differs on
+    sixteen (differences 25 and 26, compatibility exceptions): it stops at the first lookup it
     cannot make and reports no recorded reason.
 
 ### Changed

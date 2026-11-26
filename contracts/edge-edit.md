@@ -73,10 +73,12 @@ the edge from parent `p` to child `c` creates a cycle exactly when `p` is
 reachable from `c` in the graph of the compilation with the edit, with that
 one edge left out. That compilation is used, not the one without the edit,
 because the edit can bring into the closure issues that a rooted run did not
-reach before. A *remove* never creates one. A reference outside the scope is
-new when the compilation without the edit does not name it from the same
-document, and so is an unknown prerequisite (X3), which makes a run invalid
-without being a violation.
+reach before. A *remove* never creates one. A cycle among issues that only
+the compilation with the edit reaches also counts as new, as a violation on
+such an issue does: the edit is what brings either into the plan. A reference
+outside the scope is new when the compilation without the edit does not name
+it from the same document, and so is an unknown prerequisite (X3), which
+makes a run invalid without being a violation.
 
 **E7. Writer and final reread.** Before the write, the program MUST check
 that the identity it writes as is admitted under the same trust policy, and

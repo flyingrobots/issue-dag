@@ -1,0 +1,32 @@
+name: Typepack
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: typepack-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Typepack checked with the pinned Wesley
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Offline tests of the check
+        run: python -m unittest discover -s tests
+      - name: Build Wesley at the pinned commit
+        run: cargo install --locked --git https://github.com/flyingrobots/wesley --rev 280d3d7b1abbaf40dbf5663ab3c5c1d6e58abbed wesley-cli --root "$RUNNER_TEMP/wesley"
+      - name: Check the typepack
+        run: python scripts/check_typepack.py --wesley "$RUNNER_TEMP/wesley/bin/wesley"

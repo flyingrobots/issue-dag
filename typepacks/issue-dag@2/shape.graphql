@@ -1,7 +1,8 @@
 # Shape of the typepack issue-dag@2.
 #
-# UNVALIDATED SKETCH. This file has not been run through Wesley. It is not
-# normative: formats/issue-dag-2.md governs where they differ.
+# Validated with Wesley 0.3.0-alpha.1 (commit 280d3d7b1abbaf40dbf5663ab3c5c1d6e58abbed);
+# see WESLEY.json and scripts/check_typepack.py. It is not normative:
+# formats/issue-dag-2.md governs where they differ.
 #
 # Dialect (versions.md, rule A6): input types, custom scalars, enums, lists
 # and nullability only; no default values; no directives on fields.

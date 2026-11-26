@@ -9,6 +9,31 @@ flyingrobots/taskalisk#110 are not recorded here; see the history of this reposi
 
 ### Added
 
+- **Which part of a reference was not found** (flyingrobots/taskalisk#126).
+  - OB17 (new): the unavailable slot of an issue that resolves to no issue may hold `not_found`,
+    one of `owner`, `repository` and `number`, beside its reason. A reader rejects another value,
+    and `not_found` anywhere else. A slot without it records no cause, as before. The cause is
+    `not_found` alone, never read out of the reason. OB4 and OB8 point to it.
+  - D10: the run is incomplete whatever the cause. D11 to D13 (new) name the causes: owner,
+    repository and issue number not found. A cause is no finding. A private repository looks the
+    same as a missing one, which is why D10 does not make it a finding (commentary).
+  - OB16: an incomplete run also reports the cause of the slot with the least reason; of slots with
+    that reason, no cause first, then by the bytes of the value.
+  - F5: findings with one identity are one finding, so a task that names the same unknown
+    prerequisite twice receives one X3 finding.
+  - CC6: the member `cause` (`D11`, `D12`, `D13` or null), in normative cases only. A
+    characterisation case lists X3 as often as the implementation reports it. CC8: findings compare
+    as lists with repeats.
+  - Cases `graph/d11-owner-not-found`, `graph/d12-repository-not-found`,
+    `graph/d13-issue-number-not-found`, `graph/d10-not-found-with-no-cause`,
+    `graph/d13-cause-is-not-read-from-the-reason`, `graph/d12-not-found-named-by-two-documents`,
+    `graph/ob16-least-cause-of-one-reason`, `graph/ob16-no-cause-before-a-cause` and
+    `graph/ob16-cause-goes-with-the-least-reason` (the last three also `-roots-reversed`), and
+    `graph/x3-unknown-prerequisite-named-twice`. The Python differs on twelve: it reports no reason
+    and no cause (difference 26, extended), and one X3 per occurrence (difference 27, new; both
+    compatibility exceptions).
+  - Corpus digest `sha256:4f008167c292e543961fbdd3604bfc96267323e86ce52fa37c5ccccb22674ab3`.
+
 - **Which lookup a run reports when several could not be made** (flyingrobots/taskalisk#117).
   - OB16 (new): a run over a bundle reads every slot the rules reach; a missing slot (OB5) is
     reported before an unavailable one; of missing slots, the least path from `observations`

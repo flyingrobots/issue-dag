@@ -64,6 +64,15 @@ scope that the compilation without the edit does not have. A problem that is
 already there does not refuse an edit that leaves it unchanged or removes it,
 so one repair can be applied while another problem remains.
 
+**E6a. What is new.** A violation is identified by the issue that receives
+it, the label of the rule that gives it, and the reference or key it
+concerns; it is new when the compilation without the edit has no violation
+with the same three. Message text is not part of the identity. An *add* of
+the edge from parent `p` to child `c` creates a cycle exactly when `p` is
+reachable from `c` in the graph of the compilation without the edit; a
+*remove* never creates one. A reference outside the scope is new when the
+compilation without the edit does not name it from the same document.
+
 **E7. Writer and final reread.** Before the write, the program MUST check
 that the identity it writes as is admitted under the same trust policy, and
 refuse an unknown or untrusted writer. Immediately before the write, it MUST

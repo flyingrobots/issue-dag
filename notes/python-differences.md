@@ -59,7 +59,7 @@ compiler against the offline fake (`tests/fake_gh.py`) on 2026-11-12: exit 1,
 | 13 | Final reread before the write | Required | Absent | E7 |
 | 14 | Writer identity | Checked against the trust policy | Not checked | E7 |
 | 15 | Line ends of the block on rewrite | Unchanged | Every line of the block is rejoined with LF | E4 |
-| 17 | An edit to a graph that already has another problem | Allowed when the edit adds no new problem | Refused: the recompile fails on the old problem and the old body is written back | E6 |
+| 17 | An edit to a graph that already has another problem | Allowed when the edit adds no new problem (E6a) | An *add* is written, the recompile fails on the old problem, and the old body is written back; a *remove* is written and kept, and the run then reports invalid | E6, E6a |
 
 Differences 11 to 14 and 17 are the subject of `flyingrobots/taskalisk#1`.
 

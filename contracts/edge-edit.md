@@ -61,9 +61,9 @@ compile it once more without the edit. The edit is refused, and nothing is
 written, when the compilation with the edit is incomplete (an observation is
 unavailable), or when it has a cycle, a violation, a reference outside the
 scope or an unknown prerequisite that the compilation without the edit does
-not have (E6a). A problem that is
-already there does not refuse an edit that leaves it unchanged or removes it,
-so one repair can be applied while another problem remains.
+not have (E6a). A problem that is already there does not refuse an edit that
+leaves it unchanged or removes it, so one repair can be applied while another
+problem remains.
 
 **E6a. What is new.** A violation is identified by the issue that receives
 it, the label of the rule that gives it, and the reference or key it

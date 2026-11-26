@@ -11,17 +11,21 @@ flyingrobots/taskalisk#110 are not recorded here; see the history of this reposi
 
 - **Which lookup a run reports when several could not be made** (flyingrobots/taskalisk#117).
   - OB16 (new): a run over a bundle reads every slot the rules reach; a missing slot (OB5) is
-    reported before an unavailable one; of missing slots the least is reported, by kind and then
-    by key; of unavailable slots, the least reason. Draft flags (S2) are read last, in a fixed
-    order. The order of the roots never changes the slot reported.
+    reported before an unavailable one; of missing slots, the least path from `observations`
+    (member name by member name, in UTF-8 bytes); of unavailable slots, the least reason. Draft
+    flags (S2) are reached only when discovery and admission made every lookup, and then all are
+    read. The order of the roots never changes the slot reported.
+  - OB8: an issue's `body` member may be absent when the run does not read it (OB14).
   - CC6: the outcome `unusable` for a bundle that lacks a slot the run reads, with `missing`, the
     slot reported as a path from `observations`; and `unavailable`, the reason an incomplete run
     reports, in normative cases only. Only a normative case and its twin may expect `unusable`.
   - Cases `graph/ob16-missing-over-unavailable`, `graph/ob16-least-of-two-missing`,
-    `graph/ob16-missing-codeowners-before-missing-issue` and `graph/ob16-least-of-two-unavailable`,
-    each also with `-roots-reversed`. The Python differs on all eight (differences 25 and 26,
-    compatibility exceptions): it stops at the first lookup it cannot make and reports no
-    recorded reason.
+    `graph/ob16-missing-codeowners-before-missing-issue`, `graph/ob16-least-of-two-unavailable`,
+    `graph/ob16-least-draft-flag-on-the-last-node`, `graph/ob16-least-draft-flag-on-the-first-node`,
+    `graph/ob16-unavailable-issue-before-draft-flag`, `graph/ob16-missing-issue-before-a-later-body`
+    and `graph/ob16-least-of-two-permissions`, each also with `-roots-reversed`. The Python differs
+    on fourteen (differences 25 and 26, compatibility exceptions): it stops at the first lookup it
+    cannot make and reports no recorded reason.
 
 ### Changed
 

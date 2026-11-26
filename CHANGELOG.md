@@ -2,7 +2,8 @@
 
 Changes to the `issue-dag` specification: the format, its planning profiles, the admission policy,
 the observation bundle and the conformance corpus. The corpus digest of each change is recorded in
-`corpus/DIGEST` and in the version table of `versions.md`.
+`corpus/DIGEST` and in the version table of `versions.md`. Changes before
+flyingrobots/taskalisk#110 are not recorded here; see the history of this repository.
 
 ## Unreleased
 
@@ -19,10 +20,10 @@ the observation bundle and the conformance corpus. The corpus digest of each cha
   - AD3, AD4: the bot prefix `app/` and suffix `[bot]` match without regard to ASCII case, in
     logins and in allowlist entries, as the Python does. Cases `graph/ad3-bot-suffix-ignores-case`,
     `graph/ad3-app-prefix-ignores-case`, `graph/ad3-app-prefix-in-any-case-is-a-bot` and
-    `graph/ad4-entry-suffix-ignores-case`.
+    `graph/ad4-entry-suffix-ignores-case` and `graph/ad4-entry-prefix-ignores-case`.
   - OB1, OB15 (new): an object that gives a member twice, at any depth, or an `observations`
     member outside those OB6 to OB11 define, makes the bundle invalid. The corpus cannot hold an
     invalid bundle, so these rules have no case.
   - CC6: `unknown_capacity` and each skip's `semaphores` name each semaphore once, in ascending
     order of UTF-8 bytes. Case `graph/b3-names-in-byte-order`.
-  - Corpus digest `sha256:9ea9a109e3b99e1c06e2535d13f771803cad76ac302792d039f15ab04458a1b0`.
+  - Corpus digest `sha256:8e4501955972ff4f860a29290de61e49236bfe95c9e44a6d5216bf4c8fc24af8`.

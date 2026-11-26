@@ -28,9 +28,18 @@ maintainers have reviewed.
 | --- | --- | --- | --- |
 | `issue-dag-planning/2` | `issue-dag/2` | Accepted | [profiles/issue-dag-planning-2.md](profiles/issue-dag-planning-2.md) |
 
+### Conformance corpus
+
+| Corpus | Evidence for | Digest |
+| --- | --- | --- |
+| [`corpus/`](corpus/README.md) | `issue-dag/2`, `issue-dag-planning/2` | `sha256:81c9bf73c11b33e158aff61152015faf69e9d0fab43bd2458b6b817e9a56fcef` |
+
+The digest is computed as [corpus rule CD1](corpus/README.md#digest) states
+and is also held in `corpus/DIGEST`. It is recorded beside the format and the
+profile and is not part of their identity (N4).
+
 Identities (the digests of section 4) are not yet assigned; the manifest
-format that fixes their encoding is later work. The conformance corpus and its
-digest are recorded here when they exist (`flyingrobots/taskalisk#26`).
+format that fixes their encoding is later work.
 
 ## 1. Units
 

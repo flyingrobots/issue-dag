@@ -76,9 +76,9 @@ whose `result` is one of:
 
 Labels are in ascending order of their UTF-8 bytes, as paths are in CD1, so
 `V10` sorts before `V2`. A record is an object with the members of M4's
-table. A reference is written
-in canonical form; an absent value is null; `holds` is written as a list in
-ascending order; a meter claim is written `[name, slots]`.
+table. A reference is written in canonical form; an absent value is null;
+`holds` is written as a list in ascending order; a meter claim is written
+`[name, slots]`.
 
 **CC6. Graph cases.** The expected result of a graph case is an object whose
 `outcome` is one of `planned`, `invalid`, `incomplete` and `rejected`

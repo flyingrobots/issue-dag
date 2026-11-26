@@ -28,6 +28,7 @@ flyingrobots/taskalisk#110 are not recorded here; see the history of this reposi
     `graph/ob16-least-of-two-permissions`, each also with `-roots-reversed`. The Python differs on
     sixteen (differences 25 and 26, compatibility exceptions): it stops at the first lookup it
     cannot make and reports no recorded reason.
+  - Corpus digest `sha256:5d8d5e863206acbbf6cf1e3aab5afaf4d9131cca85554c3e56e554a3d955598e`.
 
 ### Changed
 

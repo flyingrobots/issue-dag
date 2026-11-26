@@ -59,8 +59,9 @@ the closure with the proposed edit applied in memory, under the profile in
 use, with the child included even when the run's roots do not reach it, and
 compile it once more without the edit. The edit is refused, and nothing is
 written, when the compilation with the edit is incomplete (an observation is
-unavailable), or when it has a cycle, a violation or a reference outside the
-scope that the compilation without the edit does not have. A problem that is
+unavailable), or when it has a cycle, a violation, a reference outside the
+scope or an unknown prerequisite that the compilation without the edit does
+not have (E6a). A problem that is
 already there does not refuse an edit that leaves it unchanged or removes it,
 so one repair can be applied while another problem remains.
 

@@ -7,6 +7,22 @@ flyingrobots/taskalisk#110 are not recorded here; see the history of this reposi
 
 ## Unreleased
 
+### Added
+
+- **Which lookup a run reports when several could not be made** (flyingrobots/taskalisk#117).
+  - OB16 (new): a run over a bundle reads every slot the rules reach; a missing slot (OB5) is
+    reported before an unavailable one; of missing slots the least is reported, by kind and then
+    by key; of unavailable slots, the least reason. Draft flags (S2) are read last, in a fixed
+    order. The order of the roots never changes the slot reported.
+  - CC6: the outcome `unusable` for a bundle that lacks a slot the run reads, with `missing`, the
+    slot reported as a path from `observations`; and `unavailable`, the reason an incomplete run
+    reports, in normative cases only. Only a normative case and its twin may expect `unusable`.
+  - Cases `graph/ob16-missing-over-unavailable`, `graph/ob16-least-of-two-missing`,
+    `graph/ob16-missing-codeowners-before-missing-issue` and `graph/ob16-least-of-two-unavailable`,
+    each also with `-roots-reversed`. The Python differs on all eight (differences 25 and 26,
+    compatibility exceptions): it stops at the first lookup it cannot make and reports no
+    recorded reason.
+
 ### Changed
 
 - **Profile and bundle gaps found by the Rust graph core** (flyingrobots/taskalisk#110).

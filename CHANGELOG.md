@@ -26,4 +26,6 @@ flyingrobots/taskalisk#110 are not recorded here; see the history of this reposi
     invalid bundle, so these rules have no case.
   - CC6: `unknown_capacity` and each skip's `semaphores` name each semaphore once, in ascending
     order of UTF-8 bytes. Case `graph/b3-names-in-byte-order`.
-  - Corpus digest `sha256:8e4501955972ff4f860a29290de61e49236bfe95c9e44a6d5216bf4c8fc24af8`.
+  - The title of each `--python` twin states what the compiler does (its disagreement note), not
+    the normative claim it disagrees with.
+  - Corpus digest `sha256:aed5aeaa3f09b4a22da06a3c41184e25f1d0f0ac4dd465ccd2345866b102a543`.

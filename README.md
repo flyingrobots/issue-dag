@@ -31,13 +31,17 @@ issues must be complete before it is correct.
 | [Edge edit contract](contracts/edge-edit.md) | Change a `.blocked_by` list on GitHub without losing a concurrent edit unawares |
 | [Typepack `issue-dag@2`](typepacks/issue-dag@2/) | See the shape and laws as GraphQL SDL and weslaw, validated with a pinned Wesley ([`WESLEY.json`](typepacks/issue-dag@2/WESLEY.json)) |
 | [Census of frontmatter shapes, 2026-11-12](evidence/2026-11-12-frontmatter-shapes.md) | See every shape of block in use and the format's verdict on each |
-| [Differences from the Python compiler](notes/python-differences.md) | See where the reference implementation and this specification disagree |
+| [Differences from the Python compiler](notes/python-differences.md) | See where the reference implementation and this specification disagree, and how each difference is classified |
+| [Conformance corpus](corpus/README.md) | Test an implementation against cases for the format and the profile |
+| [Observation bundle](corpus/bundle.md) | Record the complete input of a planning run, so that the plan can be computed again offline |
 
 ## Status
 
-`issue-dag/2` and `issue-dag-planning/2` are accepted. The conformance corpus
-does not exist yet; it is built and frozen by `flyingrobots/taskalisk#26`.
-Version 3 is planned in `flyingrobots/taskalisk#35` to `#37`.
+`issue-dag/2` and `issue-dag-planning/2` are accepted. Their conformance
+corpus is in [`corpus/`](corpus/README.md), built by
+`flyingrobots/taskalisk#26`; its digest is recorded in the [version
+table](versions.md). Version 3 is planned in `flyingrobots/taskalisk#35` to
+`#37`.
 
 The decision to keep the specification here, apart from any tool, is
 recorded in `flyingrobots/taskalisk`,

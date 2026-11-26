@@ -165,7 +165,8 @@ document that is not a container, valid or not.
 close reason. All other nodes are *open*.
 
 **G3. Edges.** For each open task `b` and each distinct reference `a` in its
-`.blocked_by`, other than those covered by X2 and X3:
+`.blocked_by`, other than the issue's own address (as D8 excludes it) and
+those covered by X2 and X3:
 
 - if `a` is complete, the edge is *satisfied*: `a` is listed as a completed
   prerequisite of `b`, and when `a` was closed as `not_planned` the pair is
@@ -321,14 +322,15 @@ correspond to this profile as follows:
 
 | Observable | In this profile |
 | --- | --- |
-| O3, structure | The nodes, the edges (G3) and each node's holds and meter claims |
+| O3, structure | Each document's declared `.blocked_by`, `.children`, `.holds` and `.meters`, as decoded. The edges a run derives from them (G3) depend on issue state and are not part of O3 |
 | O4, readiness | The ready set (Q1) and the dispatchable subset (Q2) |
 | O5, ranking | The order of the ready set (K6) |
 | O6, batch | The batch and the skipped nodes with their reasons (B5) |
 
 ## 13. Not in this profile
 
-- Lifecycle findings. This profile evaluates none of L1 to L4; their
+- Lifecycle findings. This profile evaluates none of the four lifecycle rules
+  of Taskalisk's decision 0001 (not the format's value rules L1 to L4); their
   consequences are defined by a later profile (`flyingrobots/taskalisk#33`).
 - Completion by `.type`. Under this profile a closed issue is complete for
   every type (G2).

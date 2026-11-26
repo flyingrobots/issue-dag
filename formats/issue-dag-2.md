@@ -120,8 +120,10 @@ unquoted form.
 > what lets two independent readers agree on every body.
 >
 > C2's odd case is deliberate. A body that begins
-> `` ```yaml `` followed at once by `` ``` `` has no frontmatter, as in the
-> reference implementation, rather than an empty block.
+> `` ```yaml `` followed at once by `` ``` ``, with no later closing fence, has
+> no frontmatter, as in the reference implementation, rather than an empty
+> block. When a later closing fence exists, the block runs to it and its first
+> line is the `` ``` ``, which makes it invalid.
 
 ## 3. Key binding
 

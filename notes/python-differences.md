@@ -11,8 +11,9 @@ the specification states the rule and this note records the difference.
 
 Differences 1 to 7 were observed on 2026-11-12 by calling the compiler's
 parser and validator on constructed bodies, and difference 9 by running the
-compiler against its offline fake. Differences 8 and 10 to 15 come from
-reading the code.
+compiler against its offline fake. Difference 16 was observed on 2026-11-25
+by running the compiler's discovery with the GitHub calls stubbed.
+Differences 8, 10 to 15 and 17 come from reading the code.
 
 None of these differences changes the verdict on any document in the
 [census of 2026-11-12](../evidence/2026-11-12-frontmatter-shapes.md): the
@@ -41,6 +42,7 @@ the rule as written stands, and the Python's behaviour is a defect. Difference
 | --- | --- | --- | --- | --- |
 | 9 | A document names, in `.blocked_by`, an open issue of the home repository that has no frontmatter, in a run without roots | The issue is an opaque node; the dependent is blocked | The issue is listed as unmodeled and is not a node; the dependent's prerequisite is unknown and the run is invalid | D7, X3 |
 | 10 | A `.blocked_by` lists the same closed `not_planned` prerequisite twice | One pair listed for review | One pair per occurrence | G3 |
+| 16 | Two documents name the same reference outside the scope, or the same transferred reference | Each document that names it receives a violation, whatever the order of visits | Only the documents visited before the reference is reached receive one (`referenced_by[ref] or [nid]`); a later one does not | D2, D3, D5 |
 
 Difference 9 also contradicts `docs/frontmatter-model.md` in Taskalisk,
 which says a referenced issue without frontmatter becomes an opaque node. The
@@ -57,8 +59,9 @@ compiler against the offline fake (`tests/fake_gh.py`) on 2026-11-12: exit 1,
 | 13 | Final reread before the write | Required | Absent | E7 |
 | 14 | Writer identity | Checked against the trust policy | Not checked | E7 |
 | 15 | Line ends of the block on rewrite | Unchanged | Every line of the block is rejoined with LF | E4 |
+| 17 | An edit to a graph that already has another problem | Allowed when the edit adds no new problem | Refused: the recompile fails on the old problem and the old body is written back | E6 |
 
-Differences 11 to 14 are the subject of `flyingrobots/taskalisk#1`.
+Differences 11 to 14 and 17 are the subject of `flyingrobots/taskalisk#1`.
 
 ## Outside the profile
 

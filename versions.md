@@ -171,9 +171,12 @@ A typepack with no predecessor has no comparison. That is recorded as
    (A6). Outside the dialect the shape check is *unknown*.
 2. *Laws*: each event of the law diff is classified through a table that this
    repository owns. An event the table does not classify is *unknown*.
-3. *Behaviour*: a copy of every conformance case of version `n`, with its
-   declaration relabelled to `n+1`, gives its expected result, compared as A3
-   says, when the new reader dispatches it as `n+1` (P1). The unchanged cases
+3. *Behaviour*: a copy of every document-level conformance case of version
+   `n` (a case that judges one body: its acceptance and its decoded record),
+   with its declaration relabelled to `n+1`, gives its expected result,
+   compared as A3 says, when the new reader dispatches it as `n+1` (P1).
+   Cases that judge a plan are compared under the planning profiles a claim
+   names (A2), not here. The unchanged cases
    of version `n` are run separately, as the check that the new reader still
    reads `n`; that check is not evidence for additivity.
 4. *Carrier and binding*: the carrier grammar and the key binding of `n+1`

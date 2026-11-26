@@ -56,10 +56,13 @@ refused.
 
 **E6. Validate before writing.** Before any write, the program MUST compile
 the closure with the proposed edit applied in memory, under the profile in
-use, with the child included even when the run's roots do not reach it. The
-edit is refused, and nothing is written, when that compilation is invalid or
-incomplete: a cycle, a violation, a reference outside the scope, or an
-unavailable observation.
+use, with the child included even when the run's roots do not reach it, and
+compile it once more without the edit. The edit is refused, and nothing is
+written, when the compilation with the edit is incomplete (an observation is
+unavailable), or when it has a cycle, a violation or a reference outside the
+scope that the compilation without the edit does not have. A problem that is
+already there does not refuse an edit that leaves it unchanged or removes it,
+so one repair can be applied while another problem remains.
 
 **E7. Writer and final reread.** Before the write, the program MUST check
 that the identity it writes as is admitted under the same trust policy, and
